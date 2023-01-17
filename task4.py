@@ -1,6 +1,6 @@
 # Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
 
-
+# Кодирование данных
 def rle_encode(data):
     encoding = ''
     prev_char = ''
@@ -19,5 +19,23 @@ def rle_encode(data):
         return encoding
 
 
-encoded_val = rle_encode(input())
+encoded_val = rle_encode('AAAAAAFDDCCCCCCCAEEEEEEEEEEEEEEEEE')
 print(encoded_val)
+
+
+# Декодирование данных
+
+def rle_decode(data):
+    decode = ''
+    count = ''
+    for char in data:
+        if char.isdigit():
+            count += char
+        else:
+            decode += char * int(count)
+            count = ''
+    return decode
+
+
+decoded_val = rle_decode('6A1F2D7C1A17E')
+print(decoded_val)
