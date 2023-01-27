@@ -30,7 +30,8 @@ def main():
                             print()
                             continue
                         with open(csvfile, 'w', encoding="utf-8") as file:
-                            writer = csv.DictWriter(file, fieldnames=['Фамилия', 'Имя', 'Отчество', 'Телефон'],
+                            writer = csv.DictWriter(file, fieldnames=['Фамилия', 'Имя', 'Отчество', 'Телефон', 'ID',
+                                                                      'Должность'],
                                                     lineterminator='\n', delimiter=';')
                             writer.writeheader()
                     else:
